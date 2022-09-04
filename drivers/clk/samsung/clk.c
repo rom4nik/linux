@@ -216,8 +216,8 @@ void __init samsung_clk_register_div(struct samsung_clk_provider *ctx,
 				ctx->reg_base + list->offset, list->shift,
 				list->width, list->div_flags, &ctx->lock);
 		if (IS_ERR(clk_hw)) {
-			pr_err("%s: failed to register clock %s\n", __func__,
-				list->name);
+			pr_err("%s: failed to register clock %d\n", __func__,
+				clk_hw);
 			continue;
 		}
 
